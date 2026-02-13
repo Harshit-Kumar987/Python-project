@@ -1,0 +1,100 @@
+def Chatbot():
+  while True:
+        user_input=input("Enter Your Choice:")
+        user_input=user_input.lower()
+        user_input=user_input.lstrip()
+        if user_input in ["hello", "hi", "hey","hmm","hm","yo"]:
+            answer=["Bot: Hey! How are you? How can I help you? ",
+                    "Bot: Hello How are you?",
+                    "Bot: Hey Welcome to chatbot. ",
+                    "Bot: Hello, great to see to here."]
+            import random
+            print(random.choice(answer))
+            print("type Menu to know more")
+
+
+        elif user_input in ["sad","felling sad","not happy"]:
+            print(" tum sad hi rhoge")
+
+        elif "menu" in user_input:
+            print  ("Hey Welcome to My Chatbot\n")
+            print  ("U can learn anything using wikipedia \n")
+            print  ("Solve math basics problem\n")
+            print  ("Read Qoutes\n")
+            print  ("U can create Qr\n")
+            print  ("Know Current Date & time\n")
+            print  ("Generate Otp\n")
+            print  ("Calculate Age\n")
+            print  ("Hey Welcome to My Chatbot\n")
+
+
+
+        elif "want to learn new topic"  in user_input or "learn" in user_input or "study" in user_input:
+            topic=input("Enter topic name:")
+            import wikipedia as wp
+            summary=wp.summary(topic)
+            print(summary)
+            
+
+        elif "current date time" in user_input or "date" in user_input or "time" in user_input:
+            import datetime
+            now = datetime.datetime.now()
+            print("Current Date and Time:", now)
+
+
+        elif "solve math problem" in user_input or "solve" in user_input:
+            print("1.Y can solve any expression here \n")
+            choice=input("Enter Your Choice:")
+            exp=eval(input("Enter Expression"))
+            print(exp)
+
+
+        elif "quote" in user_input or "motivate" in user_input:
+            quotes = ["Believe in yourself and all that you are!",
+             "The harder you work, the luckier you get.",
+             "Push yourself, because no one else is going to do it for you.",
+             "Great things never come from comfort zones.",
+             "You only live once, but if you do it right, once is enough.",
+             "Success is getting what you want; happiness is wanting what you get."]
+            import random
+            print("💡 Quote of the Day:", random.choice(quotes))
+
+
+       #CREATE QR CODE LOGIC
+        elif "qr" in user_input or "create qr" in user_input:
+              import qrcode as qr
+              data=input("Enter data for QR")
+              q=qr.make(data)
+              q.save("qrbychatbot.png")
+              print("Qr Saved Successfully")
+              import os
+              path_qr=os.path.abspath("q")
+              print(path_qr)
+
+
+        # CALCULATE AGE LOGIC IN YEAR
+        elif "myage" in user_input or "calculate age" in user_input or "age" in user_input:
+            import datetime as dt
+            age=int(input("Enter Your DOB in Year"))
+            c_year = dt.datetime.now().year
+            final=c_year-age
+            print("Your age in year",final)
+
+
+        # GENERATE OTP
+        elif "otp" in user_input or"generateotp" in user_input:
+            import random
+            otp=random.randint(1000,9999)
+            print("Otp is",otp)
+
+
+        elif "bye" in user_input or "q" in user_input:
+            print ("Thanks You For using me")
+            break
+
+        
+        else:
+            print ("Sorry I am unable to answer that")
+
+
+Chatbot()  
