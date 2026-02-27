@@ -58,7 +58,8 @@ print("sum of two number : ",a+b)
 a = input("Enter the name of frist movies: ")                              movies=[]
 b = input("Enter the name of second movies: ")                             movies.append(input("Enter the name of frist movies: "))
 c = input("Enter the name of thrid movies: ")                              movies.append(input("Enter the name of second movies: "))
-list =[a,b,c]                                               or             movies.append(input("Enter the name of thrid movies:"))
+                                                       #or
+list =[a,b,c]                                                            movies.append(input("Enter the name of thrid movies:"))
 print(list)                                                                print(movies)
 print(type(list))
 
@@ -133,3 +134,4 @@ value={
 }
 print(value)
 print(type(value))
+
